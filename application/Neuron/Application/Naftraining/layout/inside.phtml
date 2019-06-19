@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <?php $this->header->meta(); ?>
+        <?php $this->header->title(); ?>
+        <?php $this->header->scripts(); ?>
+    </head>
+    <body class="vanilla inside">
+        <div class="header">
+            <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light shadow">
+                <div class="container">
+                    <a class="navbar-brand" href="<?php echo($this->basePath()); ?>">
+                        <img src="<?php echo($this->basePath()); ?>/assets/images/vanilla-logo.png" />
+                        <span><?php echo($this->title); ?></span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#vanilla-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="vanilla-nav">
+                        <ul class="navbar-nav mr-auto">
+                            <?php
+                            function print_menu($item, $base, $dropdown = false) {
+
+                                $url = $base . '/' . $item['url'];
+
+                                if (count($item['children']) > 0) {
+                                    if (!$dropdown) {
+                                        echo('<li class="nav-item dropdown">');
+                                        echo('<a href="' . $url . '" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $item['title'] . ' <span class="caret"></span></a>');
+                                        echo('<ul class="dropdown-menu">');
+                                        foreach ($item['children'] as $subitem) {
+                                            print_menu($subitem, $base, true);
+                                        }
+                                        echo('</ul>');
+                                        echo('</li>');
+                                    } else {
+                                        echo('<li><a class="dropdown-item dropdown-toggle" href="#">' . $item['title'] . '</a>');
+                                        echo('<ul class="dropdown-menu">');
+                                        foreach ($item['children'] as $subitem) {
+                                            print_menu($subitem, $base, true);
+                                        }
+                                        echo('</ul>');
+                                        echo('</li>');
+                                    }
+                                } else {
+                                    if ($dropdown) {
+                                        echo('<li><a class="dropdown-item" href="' . $url . '">' . $item['title'] . '</a></li>');
+                                    } else {
+                                        echo('<li class="nav-item">');
+                                        echo('<a class="nav-link" href="' . $url . '">' . $item['title'] . '</a>');
+                                        echo('</li>');
+                                    }
+                                }
+                            }
+                            foreach ($this->menu as $item) {
+                                print_menu($item, $this->basePath());
+                            }
+                            ?>
+                        </ul>
+                        <form class="form-inline">
+                            <input type="text" class="form-control mr-sm-2" placeholder="Search" />
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <span> <?php echo(ucwords(strtolower(isset($this->session) ? $this->session->get('name') : ''))); ?> </span><span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" id="naf-module" href="<?php echo($this->basePath() . '/module'); ?>"><span class="glyphicon glyphicon-equalizer"></span><span> Manage Modules</span></a>
+                                    <a class="dropdown-item" id="naf-theme" href="<?php echo($this->basePath() . '/theme'); ?>"><span class="glyphicon glyphicon-sunglasses"></span><span> Change Theme</span></a>
+                                    <a class="dropdown-item" id="naf-logout" href="<?php echo($this->basePath() . '/logout'); ?>"><span class="glyphicon glyphicon-log-out"></span><span> Logout</span></a>
+                                </div>
+                            </li>
+                        </ul>
+                  </div>
+                </div>
+            </nav>
+        </div>
+        <div class="content">
+            <div class="container"><?php
+                echo($this->content);
+            ?></div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="copyright">
+                    Vanilla Theme B4 - Powered by Neuron Application Framework &copy; 2019
+                </div>
+            </div>
+        </div>
+    </body>
+    <?php $this->footer->scripts(); ?>
+    <script>
+    $( document ).ready( function () {
+        $( '.dropdown-menu a.dropdown-toggle' ).on( 'click', function ( e ) {
+            var $el = $( this );
+            $el.toggleClass('active-dropdown');
+            var $parent = $( this ).offsetParent( ".dropdown-menu" );
+            if ( !$( this ).next().hasClass( 'show' ) ) {
+                $( this ).parents( '.dropdown-menu' ).first().find( '.show' ).removeClass( "show" );
+            }
+            var $subMenu = $( this ).next( ".dropdown-menu" );
+            $subMenu.toggleClass( 'show' );
+            
+            $( this ).parent( "li" ).toggleClass( 'show' );
+
+            $( this ).parents( 'li.nav-item.dropdown.show' ).on( 'hidden.bs.dropdown', function ( e ) {
+                $( '.dropdown-menu .show' ).removeClass( "show" );
+                $el.removeClass('active-dropdown');
+            } );
+            
+             if ( !$parent.parent().hasClass( 'navbar-nav' ) ) {
+                $el.next().css( { "top": $el[0].offsetTop, "left": $parent.outerWidth() - 4 } );
+            }
+
+            return false;
+        } );
+    } );
+    </script>
+</html>

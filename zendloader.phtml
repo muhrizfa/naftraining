@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Zend Framework Not Initialized</title>
+        <style>
+          body {
+            color: #000;
+            background-color: #fff;
+            font-size: 16px;
+            font-family: "Courier New", Courier, monospace;
+          }
+
+          #progress {
+            color: #a00;
+            font-size: 1.125em;
+            font-weight: bold;
+            word-wrap: break-word;
+          }
+        </style>
+    </head>
+    <body>
+        <h2>Zend Framework Not Initialized</h2>
+        <p>Please wait while Zend Framework is being installed from repository...</p>
+        <div id="progress">
+        </div>
+    </body>
+    <script type="text/javascript">
+
+      var progress = document.getElementById('progress');
+      var interval = 0;
+
+      function doProgress() {
+
+          progress.appendChild(document.createTextNode('#'));
+      }
+
+      function doZend() {
+
+          var xhr = new XMLHttpRequest();
+
+          xhr.onreadystatechange = function() {
+
+              if (this.readyState == 4 && this.status == 200) {
+
+                  clearInterval(interval);
+                  if (this.responseText == 'OK') {
+                      progress.appendChild(document.createTextNode(' Done! Refreshing...'));
+                      window.location.reload(true);
+                  } else {
+                      progress.appendChild(document.createTextNode(' ERROR: ' + this.responseText));
+                  }
+              }
+          }
+          xhr.ontimeout = function() {
+
+            clearInterval(interval);
+            progress.appendChild(document.createTextNode(' ERROR: Request timed out! Refresh this page to try again!'));
+          }
+          xhr.open('GET', 'zendl.php', true);
+          xhr.timeout = 300000;
+          xhr.send();
+      }
+
+      interval = setInterval(doProgress, 750);
+      doZend();
+    </script>
+</html>

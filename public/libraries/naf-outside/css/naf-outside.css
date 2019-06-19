@@ -1,0 +1,48 @@
+.naftheme.outside {
+  font-size: 14px;
+}
+
+.naftheme.outside h1,
+.naftheme.outside h2,
+.naftheme.outside div,
+.naftheme.outside td,
+.naftheme.outside input {
+  box-sizing: border-box;
+}
+
+.naftheme.outside h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+.naftheme.outside h2 {
+  padding: 4px 6px;
+  margin: 0 0 10px 0;
+  font-size: 1.25em;
+  color: #fff;
+  background-color: #000;
+}
+
+.naftheme.outside .login {
+  display: block;
+  margin: 40px auto;
+  width: 320px;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.naftheme.outside .login input {
+  width: 100%;
+}
+
+.naftheme.outside .login .control {
+  padding: 5px 0 10px 0;
+  text-align: center;
+}
+
+.naftheme.outside .login .info p {
+  margin: 0 0 4px 0;
+  color: #666;
+  font-size: 0.75em;
+  text-align: center;
+}

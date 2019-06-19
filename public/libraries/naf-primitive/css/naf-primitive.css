@@ -1,0 +1,47 @@
+.nafprimitive .page .title {
+  text-align: center;
+}
+
+.nafprimitive .page .title img {
+  display: block;
+  margin: 64px auto 32px auto;
+  width: 100%;
+  max-width: 128px;
+  height: auto;
+}
+
+.nafprimitive .page .title h1 {
+  margin-bottom: 64px;
+}
+
+.nafprimitive .page .info p {
+  text-align: center;
+}
+
+.nafprimitive .page .info p.error {
+  color: #a00;
+}
+
+.nafprimitive .page .info p.success {
+  color: #0a0;
+}
+
+.nafprimitive .page .info p img {
+  margin-top: -2px;
+}
+
+.nafprimitive .footer {
+  position: fixed;
+  display: block;
+  top: auto;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  color: #666;
+  font-size: 0.8em;
+  text-align: center;
+  line-height: 2.5;
+  background-color: #fff;
+  border-top: 1px solid #f1f1f1;
+}

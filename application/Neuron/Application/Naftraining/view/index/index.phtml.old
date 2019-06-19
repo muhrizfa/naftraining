@@ -1,0 +1,8 @@
+<h3><img src="<?php echo($this->basePath()); ?>/assets/naf/naf-logo.png" /><?php echo($this->title); ?></h3>
+<p>Welcome to Neuron Application Framework! Our tagline today is: &ldquo;<?php echo($this->tagline); ?>&rdquo;</p>
+<p>You can edit this view at: <?php echo(__FILE__); ?></p>
+<p>You may now start develop your own Controllers, Models, and Views!</p>
+<p>Currently there is no theme installed here!</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

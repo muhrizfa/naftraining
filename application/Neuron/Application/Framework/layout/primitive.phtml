@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo($this->basePath()); ?>/assets/naf/naf-icon.ico" />
+    <link rel="stylesheet" media="all" href="<?php echo($this->basePath()); ?>/libraries/naf-primitive/css/bootstrap.min.css" />
+    <link rel="stylesheet" media="all" href="<?php echo($this->basePath()); ?>/libraries/naf-primitive/css/naf-primitive.css" />
+    <script>
+      var install = '<?php echo($this->basePath()); ?>/primitive/install';
+      var modules = <?php echo(json_encode($this->modules)); ?>;
+    </script>
+    <script src="<?php echo($this->basePath()); ?>/libraries/naf-primitive/js/jquery.min.js"></script>
+    <script src="<?php echo($this->basePath()); ?>/libraries/naf-primitive/js/naf-primitive.js"></script>
+    <title>Neuron Application Framework - Starting Up...</title>
+  </head>
+  <body class="nafprimitive">
+    <div class="container">
+      <div class="page">
+        <div class="title">
+          <img src="<?php echo($this->basePath()); ?>/assets/naf/naf-logo.png" />
+          <h1>NAF is Starting Up...</h1>
+        </div>
+        <div class="content">
+          <?php echo $this->content; ?>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <span>Neuron Application Framework - &copy; 2018 Neuronworks Indonesia</span>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+*
+!.gitignore
+!/Neuron/
+!/*.bat
+!/*.sh
+!README.md

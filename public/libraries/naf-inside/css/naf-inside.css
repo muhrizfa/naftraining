@@ -1,0 +1,83 @@
+.naftheme.inside {
+  font-size: 14px;
+}
+
+.naftheme.inside h1,
+.naftheme.inside h2,
+.naftheme.inside div,
+.naftheme.inside td,
+.naftheme.inside input {
+  box-sizing: border-box;
+}
+
+.naftheme.inside h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+.naftheme.inside h2 {
+  padding: 4px 6px;
+  margin: 0 0 10px 0;
+  font-size: 1.25em;
+  color: #fff;
+  background-color: #000;
+}
+
+.naftheme.inside h3 {
+  margin: 10px 0 20px 0;
+  font-size: 2em;
+}
+
+.naftheme.inside h3 img {
+  margin-right: 10px;
+  width: auto;
+  height: 32px;
+}
+
+.naftheme.inside .navigation {
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.naftheme.inside .navigation > ul {
+  margin: 0;
+  padding: 0 10px;
+  list-style-type: none;
+}
+
+.naftheme.inside .navigation > ul > li {
+  padding-bottom: 20px;
+}
+
+.naftheme.inside .navigation .info p {
+  margin: 0 0 4px 0;
+  color: #666;
+  font-size: 0.75em;
+  text-align: center;
+}
+
+.naftheme.inside  .content {
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.inside .btn-archive-theme,
+.inside .btn-reload-from-server {
+  position: relative;
+  float: right;
+  top: -44px;
+}
+
+.inside .btn-datagrid-filter {
+  margin-top: -4px;
+  margin-left: 5px;
+}
+
+.inside .theme-list .theme-item {
+  padding-bottom: 32px;
+}
+
+.inside .theme-list .theme-image img {
+  border-radius: 5px;
+}

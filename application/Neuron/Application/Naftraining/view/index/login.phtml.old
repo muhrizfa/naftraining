@@ -1,0 +1,18 @@
+    <div class="login">
+      <h2><?php echo($this->title); ?> Login</h2>
+      <form id="naf-login">
+        <table border="0" width="100%" cellspacing="2" cellpadding="4">
+          <tr>
+            <td><label for="naf-login-user">User</label></td>
+            <td><input type="text" id="naf-login-user" placeholder="Your user id"></td>
+          </tr>
+          <tr>
+            <td><label for="naf-login-pass">Password</label></td>
+            <td><input type="password" id="naf-login-pass" placeholder="The password"></td>
+          </tr>
+        </table>
+        <div class="control">
+          <button type="button" id="naf-login-do">Sign in</button>
+        </div>
+      </form>
+    </div>
